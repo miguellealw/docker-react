@@ -1,0 +1,12 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+# This line could be removed since the files in the container
+# are referencing the local files on the machine
+COPY . .
+
+CMD ["npm", "run", "start"]
