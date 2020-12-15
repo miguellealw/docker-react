@@ -1,6 +1,8 @@
 sudo: required
+language: node_js
+cache: npm
 notifications:
-  emai: false
+  email: false
 services:
   - docker
 before_install:
