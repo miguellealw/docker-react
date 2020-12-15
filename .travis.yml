@@ -1,9 +1,9 @@
 sudo: required
+notifications:
+  emai: false
 services:
   - docker
-
 before_install:
   - docker build -t miguelleal96/docker-react -f Dockerfile.dev .
-
 script:
-  - docker run miguelleal96/docker-react npm run test:coverage
+  - docker run -e CI=true miguelleal96/docker-react npm run test
